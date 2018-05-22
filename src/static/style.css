@@ -1,0 +1,75 @@
+body,
+p {
+  margin: 0;
+}
+
+body {
+  height: 100vh;
+  background: #e4eef0;
+}
+
+button:focus {
+  outline: 0;
+}
+
+.soundboard {
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 200px;
+  grid-auto-rows: 200px;
+  grid-gap: 20px;
+  padding: 50px;
+}
+@media (min-width: 768px) {
+  .soundboard {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 400px;
+    grid-auto-rows: 400px;
+  }
+}
+@media (min-width: 1680px) {
+  .soundboard {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+.soundboard__key {
+  border: 4px solid #6191a8;
+  background: #bbcfda;
+  border-radius: 2px;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  grid-gap: 15px;
+  font-size: 42px;
+  letter-spacing: 1px;
+  font-family: "Anton", sans-serif;
+  color: #121f27;
+  cursor: pointer;
+  transition: all 300ms ease-in-out;
+}
+.soundboard__key:hover {
+  background: #416275;
+}
+.soundboard__key:active {
+  transform: scale(0.9);
+}
+.soundboard__key__info {
+  width: 80px;
+  border: 4px solid #121f27;
+  text-align: center;
+  margin: 0 auto;
+  word-wrap: break-word;
+}
+.soundboard__key__title {
+  width: 250px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: center;
+}
+@media (min-width: 768px) {
+  .soundboard__key__title {
+    width: 350px;
+  }
+}
