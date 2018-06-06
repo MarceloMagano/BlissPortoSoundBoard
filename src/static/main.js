@@ -11,13 +11,14 @@ function keyDownHandler(e) {
   var audio = document.querySelector('audio[data-key="' + e.keyCode + '"]');
   var key = document.querySelector('div[data-key="' + e.keyCode + '"]');
   removeAnimations();
-  
-   
+
   setTimeout(() => {
-  key.classList.add('bounce', 'animated');  
+  key.classList.add('bounce', 'animated');
   }, 1);
-  
-  playSound(audio, key);
+
+  if (audio) {
+    playSound(audio, key);
+  }
 }
 
 function removeAnimations() {
@@ -41,8 +42,6 @@ function stopEveryone() {
 
 function playSound(audio, key) {
   stopEveryone();
-  audio.currentTime = 0;
-  console.log('asd');
   audio.play();
 }
 
